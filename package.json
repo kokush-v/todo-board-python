@@ -1,0 +1,15 @@
+{
+	"name": "todo-board",
+	"private": true,
+	"workspaces": [
+		"./frontend"
+	],
+	"scripts": {
+		"dev:both": "concurrently \"yarn workspace frontend dev\" \"source .venv/bin/activate && cd backend && python3 app.py\"",
+		"dev:frontend": "yarn workspace frontend dev",
+		"dev:backend": "source .venv/bin/activate && cd backend && python3 app.py"
+	},
+	"devDependencies": {
+		"concurrently": "^9.1.0"
+	}
+}
